@@ -8,8 +8,8 @@ int main (){
 // question - find the total number of pair in the array whose sum is equal to given value of x
 int arr  []= {1,4,1,0,2};
 int x;
-//cout<<"Enter your number:"<<endl;
-//cin>>x;
+
+cin>>x;
 
 int count = 0;
 for (int i=0; i<5;i++){
@@ -19,6 +19,7 @@ for(int j =i+1;j<5;j++){
     }
 }
 }//cout<<"total pairs is equal to:"<<count<<endl;
+
 
 // count the number of triplets in array whose sum is equal to a given number
 
@@ -40,17 +41,10 @@ for(int i=0;i<size;i++){
 cout<<"triplets is equal to: "<<triplets;
 
 
-
-
-
-
-
-
-
-
 //find the unique number in a given array where all elements are being repeated
 // twice with one value being unique
-
+// by array manipulation approach in which
+// we let that all the duplets have same value (-1) we will set it according to question
 int arr2 [] = {1,2,4,2,1,6,7,6,7};
 int size1 = 9;
 
@@ -67,12 +61,6 @@ for( int i = 0; i<size1;i++){
             cout<<arr2[i]<<endl;
         }
     }
-
-
-
-
-
-
 
     //print second largest number from an array
     int arr3 [] ={1,4,8,2,56,8,10,14,56};
@@ -98,7 +86,7 @@ for(int i=0;i<9;i++){
     int rotate_arr [] = {1,2,3,4,5};
     int ans_arr [5];
     int n= 5;
-    int k= 9;
+    int k= 2;
     k= k%n;
     int j=0;
     for(int i=n-k;i<n;i++){
@@ -112,11 +100,6 @@ for(int i=0;i<9;i++){
     for(int i=0; i<n;i++){
         cout<<ans_arr[i]<<" ";
     }
-
-
-
-
-
 
     // similar question without using extra memory with help of vectors
 
