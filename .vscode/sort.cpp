@@ -2,7 +2,7 @@
 # include <vector>
 using namespace std;
 /*int main (){
-    // similar above question by tow pointer aaproach sort the array which consist zeros and ones
+    // similar  question by tow pointer aaproach sort the array which consist zeros and ones
 vector<int>v(5);
 for(int i=0; i<5;i++){
     cin>>v[i];
@@ -57,6 +57,7 @@ for(int i= 0;i<n;i++){
 
 // given an integer array a sorted in non decreasing order 
 //return an  array of squares of each number sorted in non decresing order
+// considering there are only positive elements in array
 int n;
 cout<<"enter size of vector;"<<endl;
 cin>>n;

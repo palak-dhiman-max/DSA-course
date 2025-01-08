@@ -4,7 +4,7 @@ using namespace std;
 int main (){
   // vectors are dynamic arrays in which we can resize or delete the elements from array
 // vectorname . size()- length of vector
-// vectorname . capacity - capacity of vector
+// vectorname . capacity() - capacity of vector
 // capacity of vector is always greater than size and it is usually compiler dependent
 
 
