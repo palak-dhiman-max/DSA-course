@@ -11,11 +11,11 @@ using namespace std ;
 
     // add tow number using pointer
 
-    int x = 4;
+    /*int x = 4;
     int y =5;
     int result ;
     int *ptr= &x;
-    int *ptr1= &y;
+    int *ptr1= &y;*/
   //  result = *ptr + *ptr1;
     //cout<<result<<" ";
 
@@ -145,7 +145,7 @@ for(int i=0; i<n; i++){
 
  }*/
 
-// another uscase
+// another usecase
 /*int main (){
   int arr []= {3,2,4,5};
   int *ptr = (arr+2);
@@ -164,7 +164,7 @@ for(int i=0; i<n; i++){
    // Try to change it with the help of *p
 int main()
 {
-   int num = 10;
+  /* int num = 10;
    int *p = &num;
    *p +=5;
    cout<<*p<<endl;
@@ -192,9 +192,10 @@ cout<<str<<endl;
 int arr1[5] = {1,2,3,4,5};
 //What is the difference between arr and &arr. Try to explore it on your own.
 cout<<arr1<<" "<<&arr1<<endl; // we get same address by both
-//difference is arr that points to only first element but &arr points to entire array
+//difference is arr that points to only first element address
+//but &arr points to entire array adress
 
-//ouestion 5
+//question 5
  int arr8[5] = {1,2,3,4,5};
  // Create a pointer which will store the address of the last element. 
  //Then print all the elements from the last index to 0th index with the help of a pointer.
@@ -203,8 +204,41 @@ int *p8 = &arr8[5];
 for (int i=5; i>=0;i--){
   cout<<*p8<<endl;
   p8--;
+}*/
+
+//  types of pointer
+// wild pointer
+int *p9 ;
+//cout<<p9<<endl; // we get an random address
+
+// null pointer
+int *i = NULL;
+//cout<<i;
+//if we derefernce it 
+//cout<<*i<<endl; // we get nothing so we cannnot derefernce it.
+
+// dandling pointer
+int *q = NULL;
+{
+  int x = 12;
+  q=&x;
+  
 }
+//cout<<q<<endl;
+//cout<<*q;
+// we cannot access x outside its scope but using pointer we can easily access its value 
+// because we have its address.
 
+// void pointer
+int o = 34;
+float k = 23.9;
+void *kl = &k;
+//cout<<kl<<endl;
+kl= &o;
+//cout<<kl<<endl;
 
+// type casting
+int *integerPointer = (int*)kl;
+cout<<*integerPointer<<endl;
 
 }
