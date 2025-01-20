@@ -182,3 +182,66 @@ int main (){
     string str= "abcax";
     cout<<removeOccA(str,0);
 }*/
+
+// check whether integer is palindrom or not recursively
+/*int palindrom(int num,int reverse){
+    if(num==0){
+        return reverse;
+    }
+    // recursive code
+    reverse = reverse*10+num%10;
+    return palindrom(num/10,reverse);
+}
+int main (){
+    int num = 126821;
+    if(num==palindrom(num,0)){
+        cout<<"yes palindrom";
+    }else{
+        cout<<"not palindrom";
+    }
+}*/
+
+// given a number n, find increasing sequence from 1to n without using any loop
+/*void findSequence(int n){
+    if(n<=0){
+        return;
+    }
+    findSequence(n-1);
+    cout<<n<<" ";
+}
+int main (){
+    int n= 5;
+    findSequence(n);
+}
+*/
+
+// given a number num and value k , print k multiple of num
+/*void findMultiple(int num,int k){
+    if(k==0){
+        return;
+    }
+    findMultiple(num,k-1);
+    cout<<(num*k)<<" ";
+}
+int main (){
+    int num= 5;
+    findMultiple(8,7);
+}*/
+
+// given a number n find sum of natural number till n but with alternate signs
+/*int findSum(int n){
+    if(n==0){
+        return 0;
+    }
+    int result;
+    if(n%2==0){
+        result = -n;
+    }else{
+        result = n;
+    }
+    return result + findSum(n-1);
+}
+int main (){
+    int n = 5;
+  cout<<findSum(n);
+}*/
