@@ -2,7 +2,7 @@
 #include<iostream>
 using namespace std;
 int main(){
-   /* cout<<"project calculator"<<endl;
+    cout<<"project calculator"<<endl;
     int sum ;
     int num;
     char operation;
@@ -46,7 +46,7 @@ int main(){
             }
         
         }
-        cout<<"Your result is equal to "<<sum<<endl;*/
+        cout<<"Your result is equal to "<<sum<<endl;
 
 
         }

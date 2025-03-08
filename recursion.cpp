@@ -1,4 +1,5 @@
-# include <iostream>
+ # include <iostream>
+# include <vector>
 using namespace std;
 
 // finding factorial using recursion 
@@ -245,3 +246,144 @@ int main (){
     int n = 5;
   cout<<findSum(n);
 }*/
+
+// given number x and y find the gcd(greatest common diviser) (x>y)
+/*int findgcd(int x, int y){
+if(y>x){
+    return findgcd(x,x%y);
+}
+if(y==0 ){
+    return x ;
+}
+    return findgcd(y,x%y);
+    
+}
+int main (){
+    int x =72;
+    int y=54;
+  cout<< findgcd(x,y);
+}*/
+
+// check whether given number is armstrong or not
+
+/*// calculating power
+int power(int p,int q){
+if(q==0){
+    return 1;
+}
+return p*power(p,q-1);
+}
+// checking armstrong
+int checkarmstrong(int n,int d){
+if(n==0){
+    return 0;
+}
+
+return power(n%10,d)+checkarmstrong(n/10,d);
+}
+int main(){
+    int n = 153;
+
+int totaldigits = 0;
+    while(n>0){
+n=n/10;
+    totaldigits ++;
+
+
+    }
+        if(checkarmstrong(n,totaldigits)==n){
+        cout<<"armstrong number";
+    }else{
+        cout<<"not armstrong";
+    }
+}*/
+
+
+// question check whether the number is present in a given array or not recursively
+/*bool existenceChecker(int  *arr,int i,int n,int x){
+if(i==n){
+    return false;
+}
+if(arr[i]==x){
+    return true;
+}
+return  existenceChecker(arr,i+1,n,x);
+}
+int main (){
+   
+    int arr[]={1,2,3,4,5};
+    int x=-3;
+    bool result=existenceChecker(arr,0,5,x);
+    if(result){
+cout<<"yes";
+    }else{
+        cout<<"no";
+    }
+}*/
+
+// question given an array of integers , print sum of all subsets in it .output sums can be printed in any order
+
+
+/*void printSubsetSum(int n,int *arr,int i,int sum, vector<int> &result){
+
+    if(i==n){
+    result.push_back(sum);
+    return;}
+
+printSubsetSum(n,arr,i+1,sum+arr[i],result); // pick ith element
+
+printSubsetSum(n,arr,i+1,sum,result); // dont pick ith element
+    
+}
+
+int main (){
+   
+    int arr[]={1,2,3};
+    int n=3;
+    vector<int> result;
+    printSubsetSum(n,arr,0,0,result);
+
+for(int i=0; i<result.size();i++){
+    cout<<result[i]<<" ";
+}
+
+}*/
+
+// question problem is to count all the possible paths on an mxn grid from top left (grid[0][0]) 
+//to bottom right(grid[m-1][n-1]). having constraints that from each cell you can either move only to right or down 
+/*int gridChecker(int m,int n,int i,int j){
+if(i==m-1||j==n-1){
+    return 1;
+}
+if(i>=m||j>=n){
+    return 0;
+}
+return gridChecker(m,n,i+1,j) +gridChecker(m,n,i,j+1);
+}
+int main (){
+    int m,n,i,j;
+    cout<<gridChecker(2,3,0,0);
+}*/
+
+// question 
+void subsequentString(int n,int i, string &str,string result,vector<string> &li){
+if(i==str.size()){
+    li.push_back(result);
+    return;
+}
+subsequentString(n,i+1,str,result+str[i],li);
+
+subsequentString(n,i+1,str,result,li);
+}
+
+
+int main (){
+    int n=3;
+    string str ="abc";
+    vector<string> li;
+
+    subsequentString(3,0,str," ",li);
+    for(int i=0; i<li.size(); i++){
+        cout<<li[i]<<" ";
+    }
+}
