@@ -62,3 +62,30 @@ int main (){
         cout<<v[i]<<" ";
     }
 }
+
+
+// question - apply bubble sort but from end
+int main (){
+    int arr[100];
+    int n;
+    cin>>n;
+    for(int i=0; i<n;i++){
+        cin>>arr[i];
+    }
+
+    for(int i=0; i<n-1;i++){
+        bool sorted =0;
+        for(int j=n-1;j>0;j--){
+            if(arr[j]<arr[j-1]){
+                swap(arr[j],arr[j-1]);
+                sorted=1;
+            }
+        }
+        if(sorted==0){
+            break;
+        }
+    }
+    for(int i=0; i<n;i++){
+       cout<<arr[i]<<" ";
+    }
+}
