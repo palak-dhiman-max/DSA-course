@@ -1,9 +1,10 @@
 # include<iostream>
 # include<vector>
+# include <algorithm>
 using namespace std ;
 
 // sorting using selection sort
-void selectionsort(vector<int> &v){
+/*void selectionsort(vector<int> &v){
     // firstly we will find minimum element
     int n = v.size();
     
@@ -71,8 +72,8 @@ selectionsort(v1);
 
 // sort character array
 void selectionsort(vector<char>&v1){
-    //   0 1 2 3 4
-int n; // 5 7 6 3 2 
+
+int n; 
 n=v1.size();
    for(int i=n-1; i>0;i--){
        int max_indx = i;
@@ -99,4 +100,25 @@ selectionsort(v1);
    for(int i=0; i<v1.size();i++){
        cout<<v1[i]<<" ";
    }
+}*/
+
+// sorting string array in lexographical order
+
+int main(){
+
+    string arr[]={"papaya","lime","watermelon","apple","mango","kiwi"};
+
+    for(int i=0; i<5; i++){
+        int min_idx = i;
+        for(int j=i+1; j<6; j++){
+            if(arr[j] < arr[min_idx]){
+                min_idx=j;
+            }
+        }
+        swap(arr[i],arr[min_idx]);
+    }
+
+    for(int i=0; i<6; i++){
+        cout<<arr[i]<<" ";
+    }
 }
