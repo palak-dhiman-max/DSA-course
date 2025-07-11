@@ -25,6 +25,7 @@
 
     //traversing in arr[]
     int i=0;
+    int indx;
     int j=0;
 while(i<n){
     if(arr[i] !=j){
@@ -35,6 +36,7 @@ while(i<n){
         i++;
         j=0;
     }
+   
     
 }
 
@@ -59,5 +61,14 @@ if(count[i]!=0){
 for(int i=0; i<n; i++){
     cout<<arr[i]<<" ";
 }
+
+
+
+
+
+
+
   
  }
+
+
