@@ -28,7 +28,7 @@ using namespace std;
 
 // }
 
-// using functions privately acecssing aatributes
+// using functions privately acecssing atributes
 
 // class student
 // {
@@ -76,7 +76,7 @@ using namespace std;
 
 
 // int main (){
-//     student s1;
+// student s1;
 // s1.setage(24);
 // s1.setgrade("A++");
 // s1.setname("palak");
@@ -87,7 +87,7 @@ using namespace std;
 // }
 
 
-// now we didnt make function void we just return and then print in main function
+// now we didn't make function void we just return and then print in main function
 // class student
 // {
 //     private:
@@ -124,7 +124,7 @@ using namespace std;
 // }
 
 
-// we will print the grade only when iit is equal to the pin
+// we will print the grade only when it is equal to the pin
 
 // class student{
 //     private:
@@ -185,7 +185,7 @@ class student {
 int main (){
 
     //making a pointer such that it take dynamic memory
-    student *s1=new student;
+    student *s1= new student;
 (*s1).name ="palak";
 (*s1).rollno =11242362;
 (*s1).age=19;
