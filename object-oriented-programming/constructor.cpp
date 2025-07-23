@@ -105,7 +105,7 @@ student s2(s1);
 s1.display();
 s2.display();
 //another syntax to copy it is assignment operator;
-student s3("tarun",3435,19);
+student s3("tn",3435,19);
 s3 = s1;
 s3.display();
 }
