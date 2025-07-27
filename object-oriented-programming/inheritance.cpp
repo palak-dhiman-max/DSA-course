@@ -13,6 +13,7 @@ class human{
     //ho jata hai
     string name;
     int age,weight;
+  
 };
 
 
@@ -29,6 +30,7 @@ class student : private human{
         fees =f;
         rollno=r;
     }
+    
 
     void display(){
         cout<<name<<" "<<age<<" "<<weight<<" "<<fees<<" "<<rollno<<endl;
@@ -47,5 +49,6 @@ teacher t;
 t.name="tark";
 cout<<t.name<<endl;
 s1.display();
+
 
 }
