@@ -87,7 +87,7 @@ class dog :public Animal{
     void speak(){
         cout<<"bark";
     }
-};
+ };
 
 class cat :public Animal{
     public:
