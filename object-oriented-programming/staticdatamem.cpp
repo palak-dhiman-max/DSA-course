@@ -160,4 +160,4 @@ int main()
     s2.deposit(500);
     s3.withdraw(600);
     customer ::accessdata();
-}
+ } 

@@ -12,7 +12,7 @@ using namespace std;
 //     human(string name,int age){
 //     this->name =name;
 //     this->age=age;
-//     // cout<<"i am human"<<endl;
+//     cout<<"i am human"<<endl;
 //     }
 
 //     void display(){
@@ -24,77 +24,80 @@ using namespace std;
 //     int fees,rollno;
 // public:
 
-// student(string name,int age,int fees,int rollno):human(name,age){
+// student(string name,int age,int fees,int rollno) : human(name,age){
   
 //     this->fees=fees;
 //     this->rollno=rollno;
     
-//     // cout<<"i am student"<<endl;
+    
+//     cout<<"i am student"<<endl;
+//   }
+
+// void display(){
+//     cout<<name<<" "<<age<<" "<<fees<<" "<<rollno<<endl;
 // }
 
-// // void display(){
-// //     cout<<name<<" "<<age<<" "<<fees<<" "<<rollno<<endl;
-// // }
-
-// };
+//  };
 
 
 // int main (){
+      
 //     student s1("rohit",24,50000,11242362);
-//     // s1.display();
+  
+//      s1.display();
 // }
 
 
 
 // multilevel inheritance
 
-// class person{
+class person{
 
-//     protected:
-//     string name;
+    protected:
+    string name;
 
-//     // public:
-//     //    void per(){
-//     //     cout<<name;
-//     // }
+    public:
+       void per(){
+        cout<<name;
+    }
    
  
-// };
+};
 
-// class employee :public person{
+class employee :public person{
 
-//     protected:
-//     int salary;
+    protected:
+    int salary;
 
-//     public:
-//     void emp(){
-//         cout<<salary;
-//     }
+    public:
+    void emp(){
+        cout<<salary;
+    }
 
 
-// };
+};
 
-// class manager:public employee{
+class manager:public employee{
 
-//     string department;
-//     public:
-//     manager(string name,int salary,string department){
-//         this->name=name;
-//         this-> salary= salary;
-//         this->department=department;
+    string department;
+    public:
+    manager(string name,int salary,string department){
+        this->name=name;
+        this-> salary= salary;
+        this->department=department;
         
-//     }
+    }
 
-//     // void display(){
-//     //     cout<<name<<" "<<salary<<" "<<department<<endl;
-//     // }
-// };
+    // void display(){
+    //     cout<<name<<" "<<salary<<" "<<department<<endl;
+    // }
+};
 
-// int main (){
-//     manager m ("palak",5000,"financial");
-// // m.display();
-// m.per();
-// }
+int main (){
+    manager m ("palak",5000,"financial");
+// m.display();
+m.per();
+}
 
 
 
@@ -237,42 +240,42 @@ using namespace std;
 
 // multipath inheritance
 
-class human{
+// class human{
 
-    protected:
-    string name;
-    int age;
-};
+//     protected:
+//     string name;
+//     int age;
+// };
 
-class youtuber:public virtual human{
-    protected:
-int subscribers;
-};
+// class youtuber:public virtual human{
+//     protected:
+// int subscribers;
+// };
 
-class engineer:public  virtual human{
-    protected:
-string specialisation;
-};
+// class engineer:public  virtual human{
+//     protected:
+// string specialisation;
+// };
 
-class codeteacher : public youtuber,public engineer{
-int salary;
-public :
-codeteacher(string name,int age,int subscribers,string specialisation ,int salary){
-    this->name = name;
-    this -> age= age;
-    this ->subscribers= subscribers;
-    this->specialisation= specialisation;
-    this ->salary= salary;
-}
+// class codeteacher : public youtuber,public engineer{
+// int salary;
+// public :
+// codeteacher(string name,int age,int subscribers,string specialisation ,int salary){
+//     this->name = name;
+//     this -> age= age;
+//     this ->subscribers= subscribers;
+//     this->specialisation= specialisation;
+//     this ->salary= salary;
+// }
 
-void display(){
-    cout<<name<<" "<<age<<" "<<subscribers<<" "<<specialisation<<" "<<salary<<endl;
-}
-};
+// void display(){
+//     cout<<name<<" "<<age<<" "<<subscribers<<" "<<specialisation<<" "<<salary<<endl;
+// }
+// };
 
-int main (){
-codeteacher c("palak",19,5000000,"cse",2000);
+// int main (){
+// codeteacher c("palak",19,5000000,"cse",2000);
 
-c.display();
-}
+// c.display();
+// }
 
