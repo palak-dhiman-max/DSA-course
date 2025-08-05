@@ -1,0 +1,204 @@
+#include<iostream>
+#include <vector>
+using namespace std;
+class node {
+    public:
+int data;
+node *next;
+    node(int data){
+        this->data = data;
+        next = NULL;
+    }
+
+};
+
+
+//function create linked list
+
+ node *createlinkedlist(int arr[],int i,int n){
+
+    
+node *head ;
+head = NULL;
+node *temp;
+for(int i=0; i<n; i++){
+    //if list is not there
+if(head==NULL){
+    head = new node(arr[i]);
+    temp = head;
+
+}
+
+//if list is there
+else{
+    
+   temp->next = new node(arr[i]);
+   temp=temp->next;
+   
+}
+
+}
+
+return head;
+}
+// //reverse the given linked list
+// int main (){
+
+//     //creating array
+//     int arr[]={1,2,3,4,5};
+    
+
+//     //making vector for storing address
+//     vector<node*>elements;
+
+//     //calling create linked list function
+//     node *Head;
+//     Head = createlinkedlist(arr,0,5);
+
+//     node *temp1;
+//     temp1 = Head;
+    
+
+//     while(temp1){
+//         cout<<temp1->data<<" ";
+//         elements.push_back(temp1);
+//         temp1 = temp1->next;
+//     }
+
+//     cout<<endl;
+//     cout<<"after reversing"<<endl;
+
+//     //printing reversed list
+//     for(int i=elements.size()-1; i>=0 ; i--){
+//         cout<<elements[i]->data<<" ";
+//     }
+
+
+// }
+
+//another approach
+
+// int main (){
+
+//     //creating array
+//     int arr[]={1,2,3,4,5};
+    
+
+//     //making vector for storing address
+//     vector<int>elements;
+
+//     //calling create linked list function
+//     node *Head;
+//     Head = createlinkedlist(arr,0,5);
+
+//     node *temp1;
+//     temp1 = Head;
+    
+
+//     while(temp1){
+
+//         elements.push_back(temp1->data);
+//         temp1 = temp1->next;
+//     }
+
+// temp1 = Head;
+//     //printing reversed list
+
+//     for(int i=elements.size()-1; i>=0 ; i--){
+//        temp1->data = elements[i];
+//           cout<<temp1->data<<" ";
+//        temp1 = temp1->next;
+    
+//     }
+
+
+// }
+
+// by acctually conecting in reverse order reversing list this is actually reverse linked list
+
+
+// int main (){
+
+//     //creating array
+//     int arr[]={1,2,3,4,5,6,7,8};
+    
+
+//     //calling create linked list function
+//     node *Head;
+//     Head = createlinkedlist(arr,0,8);
+
+//     node *curr = Head;
+//     node *prev = NULL;
+//     node *futr ;
+
+//   while(curr){
+
+//     //storing next node adress
+//     futr = curr->next;
+
+//     //storing prev adress in current such that it point previous one
+//     curr->next = prev;
+
+//     //updating previouus
+//     prev = curr;
+
+//     //updtaing current
+//     curr = futr;
+
+
+//   }
+
+//      //storing adress of last node in head
+
+//      Head = prev;
+
+//     node *print;
+//     print = Head;
+
+//     while(print){
+//         cout<<print->data<<" ";
+//         print = print->next;
+//     }
+
+ 
+// }
+
+
+// reversing using recursion
+
+node *reverselinkedlist(node *prev,  node *curr){
+
+    //base case 
+    if(curr==NULL){
+        return prev;
+    }
+
+    //main logic
+
+    node *futr ;
+    futr = curr->next;
+    curr->next = prev;
+
+    return reverselinkedlist(curr,futr);
+}
+
+int main (){
+
+    int arr[]={1,2,3,4,5};
+    int n = 5;
+
+    node *head ;
+   head = createlinkedlist(arr,0,n);
+
+
+   head = reverselinkedlist(NULL,head);
+
+   node *temp;
+   temp = head;
+
+   while(temp){
+    cout<<temp->data<<" ";
+    temp = temp->next;
+   }
+
+}
