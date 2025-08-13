@@ -182,23 +182,131 @@ node *reverselinkedlist(node *prev,  node *curr){
     return reverselinkedlist(curr,futr);
 }
 
+// int main (){
+
+//     int arr[]={1,2,3,4,5};
+//     int n = 5;
+
+//     node *head ;
+//    head = createlinkedlist(arr,0,n);
+
+
+//    head = reverselinkedlist(NULL,head);
+
+//    node *temp;
+//    temp = head;
+
+//    while(temp){
+//     cout<<temp->data<<" ";
+//     temp = temp->next;
+//    }
+
+//  }
+
+
+
+ 
 int main (){
 
-    int arr[]={1,2,3,4,5};
-    int n = 5;
+    //creating array
+    int arr[]={1,2,3,4,5,6,7,8,9};
+    
 
-    node *head ;
-   head = createlinkedlist(arr,0,n);
+    //calling create linked list function
+    node *Head;
+    Head = createlinkedlist(arr,0,9);
+ int left = 3;
+ int right = 7;
+
+ node  *curr;
+        node  *prev;
+        curr = Head;
+        prev = NULL;
+        left--;
+        right--;
+      node *Head1;
+      node * temp1;
+node *right_next;
+  node *print ;
 
 
-   head = reverselinkedlist(NULL,head);
+//handling edge case if left = 1
+       if(left==0){
+    
+temp1 = Head;
+      while(right--){
+        temp1=temp1->next;
+      }
 
-   node *temp;
-   temp = head;
+      //storing address of right next element
+      
+      right_next = temp1->next;
 
-   while(temp){
-    cout<<temp->data<<" ";
-    temp = temp->next;
-   }
+temp1->next = NULL;
+       Head1 = reverselinkedlist(NULL,curr);
 
- }
+     curr->next = right_next;
+
+     
+  print = Head1;
+    while(print){
+        cout<<print->data<<" ";
+        print = print->next;
+    }
+       }
+       
+
+       else{
+//setting left at its index
+        while(left-- ){
+      prev = curr;
+      curr=curr->next;
+   
+        }
+
+        node *left1;
+        left1 = curr;
+
+
+      node  *futr;
+  
+      temp1 = Head;
+
+      //setting right at its index
+      while(right--){
+        temp1=temp1->next;
+      }
+
+      //storing address of right next element
+      
+      right_next = temp1->next;
+
+
+      //making temp1 which is pointing to right null
+temp1->next = NULL;
+
+//having adress of four
+ Head1=reverselinkedlist(NULL,curr);
+
+
+ //linking 1 with 4
+prev->next = Head1;
+cout<<endl;
+    
+
+//linking 2 with 5
+left1->next = right_next;
+
+    
+
+
+//printing list 
+
+  print = Head;
+    while(print){
+        cout<<print->data<<" ";
+        print = print->next;
+    }
+       }
+ 
+}
