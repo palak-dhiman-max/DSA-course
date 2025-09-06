@@ -16,6 +16,9 @@ public:
     }
 };
 
+
+//creating list
+
 // int main (){
 //     int arr[]={2,4,6,8,10};
 //     Node * head;
@@ -113,8 +116,11 @@ public:
 
 // }
 
+
 // deletion of node from particular index
 
+
+//creating list
 // int main (){
 //     int arr[]={2,4,6,8,10};
 //     Node * head;
@@ -146,7 +152,9 @@ public:
 // cin>>x;
 //   x--;
 
-// //handle edge case
+// //handle edge case agar ye nahi karenge to infinite loop
+// me chale jayege if x=-1, so loop went to infinite as condition true as -1 is non zero
+
 // if(x==0){
 //     Node *temp4;
 //     temp4= head;
@@ -175,7 +183,12 @@ public:
 
 // }
 
-// deleting elemnt at particular index using recursion
+
+
+
+
+
+// deleting element at particular index using recursion
 
 // void deletenode(int arr[] , Node * head ,int y,Node * prev,Node * curr){
 
@@ -187,6 +200,9 @@ public:
 
 //     deletenode(arr,head,y-1,curr,curr->next);
 // }
+
+
+//creating list
 // int main (){
 //     int arr[]={2,4,6,8,10};
 //     Node * head;
@@ -206,6 +222,8 @@ public:
 //        tail=tail->next;
 //     }
 // }
+
+
 // //deleting node from particular index
 // int x;
 // cout<<"enter index : ";
