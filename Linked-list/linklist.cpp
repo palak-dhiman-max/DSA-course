@@ -27,7 +27,7 @@ class Node{
 // int main (){
 
 
-// //coverting  array to linked list;
+// //converting  array to linked list;
 
 // int arr[]={1,2,3,4,5};
 
@@ -218,6 +218,9 @@ class Node{
 // }
 
 // making linked list using recursion but inserting node in middle.
+
+
+//firstly creating the list
  Node * createlinkedlist(int arr[],int size,int indx){
     if(indx==size){
         return NULL;
@@ -226,6 +229,8 @@ class Node{
     Node *temp;
     temp = new Node(arr[indx]);
     temp->next =createlinkedlist(arr,size,indx+1);
+
+    //returning temp because it return adress of current to prev one such that they link with each other
     return temp;
  }
 int main (){
@@ -234,9 +239,7 @@ int main (){
     head = NULL;
     head = createlinkedlist(arr,6,0);
 
-    //printing list
-    Node *temp;
-temp = head;
+
 
 Node *temp1;
 temp1=head;
@@ -255,7 +258,6 @@ while(k--){
 }
 
 
-
 //making node which we have to insert
 Node *temp2;
 temp2 = new Node (28);
@@ -265,6 +267,11 @@ temp2->next = temp1->next;
 
 // connecting element at 2 indx with this new node
 temp1->next = temp2;
+
+
+ //printing list
+Node *temp;
+temp = head;
 
 while(temp){
     cout<<temp->data<<endl;
