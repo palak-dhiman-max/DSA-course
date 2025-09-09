@@ -84,7 +84,7 @@ return head;
 //     int arr[]={1,2,3,4,5};
     
 
-//     //making vector for storing address
+//     //making vector for storing element
 //     vector<int>elements;
 
 //     //calling create linked list function
@@ -136,7 +136,7 @@ return head;
 //     //storing next node adress
 //     futr = curr->next;
 
-//     //storing prev adress in current such that it point previous one
+//     //storing prev address in current such that it point previous one
 //     curr->next = prev;
 
 //     //updating previouus
@@ -148,7 +148,7 @@ return head;
 
 //   }
 
-//      //storing adress of last node in head
+//      //storing address of last node in head
 
 //      Head = prev;
 
@@ -205,7 +205,7 @@ node *reverselinkedlist(node *prev,  node *curr){
 
 
 
- 
+ //reversing list between left and right portion (leetcode problem)
 int main (){
 
     //creating array
