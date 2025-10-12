@@ -47,7 +47,7 @@ using namespace std;
      if(r1!=c2){
       cout<<"you cannot do multiplication of the matrices it is not possible"<<endl;
      }
-   cout<<"enter elemnents of matrix first:"<<endl;
+   cout<<"enter elements of matrix first:"<<endl;
     for(int i=0; i< r1;i++)  {
     for(int j=0;j<c1;j++){
         cin>>arr2[i][j];
