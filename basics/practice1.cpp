@@ -17,8 +17,7 @@
 // //     }
 
 // //     cout<<result;
-// //  
-
+// //
 
 // //question->2 jagged array
 
@@ -27,7 +26,6 @@
 // //     {3,4,5,6},
 // //     {7,8,9}
 // // };
-
 
 // // for(int i=0; i<jaggedArray.size();i++){
 
@@ -56,7 +54,7 @@
 //                     cons_count++;
 //                     char_count++;
 //                  }}
-                 
+
 //                  else if(str[i]!=' '){
 //                     char_count++;
 //                  }
@@ -64,15 +62,12 @@
 //                  else if(str[i]==' '){
 //                     word_count++;
 //                  }
-                
+
 //                }
 
 //                cout<<vowel_count<<" "<<cons_count<<" "<<char_count<<" "<<word_count;
-        
+
 // }
-
-
-            
 
 // #include<iostream>
 // using namespace std;
@@ -110,19 +105,12 @@
 //       sum+=waiting_time[i];
 //    }
 
-  
-  
 //    float average_waiting_time ;
 //    average_waiting_time = (sum/process);
 
 //    cout<<"Average waiting time is:"<<average_waiting_time;
 
-
-
 // }
-
-
-
 
 // #include <iostream>
 // using namespace std;
@@ -154,7 +142,6 @@
 //     }
 //    }
 
-
 // int ans =0;
 // int tat[process];
 
@@ -164,6 +151,72 @@
 //    tat[i]=ans-arrival_time[i];
 // }
 
+//    float sum =0;
+//    float sum2 =0;
+//    for(int i=0; i<process; i++){
+//       sum+=wt[i];
+//       sum2+=tat[i];
+//    }
+
+//    float average_waiting_time ;
+//    float average_tat;
+//    average_waiting_time = (sum/process);
+//    average_tat=(sum2/process);
+//    cout<<"Average waiting time is:"<<average_waiting_time<<endl;
+//    cout<<"Average turn around time is:"<<average_tat;
+
+// }
+
+// priority sheduling
+//  #include <iostream>
+//  using namespace std;
+
+// int main (){
+//     int process ;
+//    cout<<"enter process";
+//    cin >>process;
+
+//    cout<<"enter burst time";
+//    int burst_time[process];
+//    for(int i=0 ; i<process; i++){
+//       cin>>burst_time[i];
+//    }
+
+//    cout<<"enter priority";
+//    int priority[process];
+//    for(int i=0; i<process;i++){
+//       cin>>priority[i];
+//    }
+
+//    int wt[process];
+
+//    //sorting burst time
+//       for(int i=0; i<process;i++){
+//     for(int j=0;j<process-i-1;j++){
+//         if(burst_time[j]>burst_time[j+1]){
+//             swap(burst_time[j],burst_time[j+1]);
+//         }
+//     }
+//    }
+
+// //   sorting  priority
+
+//          for(int i=0; i<process;i++){
+//     for(int j=0;j<process-i-1;j++){
+//         if(priority[j]>priority[j+1]){
+//             swap(priority[j],priority[j+1]);
+//         }
+//     }
+//    }
+
+// int ans =0;
+// int tat[process];
+
+// for(int i=0; i<process;i++){
+//    ans = ans+burst_time[i];
+//    wt[i]=ans-priority[i]-burst_time[i];
+//    tat[i]=ans-priority[i];
+// }
 
 //    float sum =0;
 //    float sum2 =0;
@@ -172,8 +225,6 @@
 //       sum2+=tat[i];
 //    }
 
-  
-  
 //    float average_waiting_time ;
 //    float average_tat;
 //    average_waiting_time = (sum/process);
@@ -181,82 +232,70 @@
 //    cout<<"Average waiting time is:"<<average_waiting_time<<endl;
 //    cout<<"Average turn around time is:"<<average_tat;
 
-
-
 // }
 
-
-
-//priority sheduling
 #include <iostream>
 using namespace std;
 
-int main (){
-    int process ;
-   cout<<"enter process";
-   cin >>process;
+int main()
+{
+   int n = 4;
+   int tq = 3;
 
-   cout<<"enter burst time";
-   int burst_time[process];
-   for(int i=0 ; i<process; i++){
-      cin>>burst_time[i];
+   int at[] = {0, 1, 2, 3};
+   int bt[] = {10, 5, 7, 4};
+   int rt[4], ct[4];
+
+   for (int i = 0; i < n; i++)
+      rt[i] = bt[i];
+
+   int time = 0, completed = 0;
+
+   while (completed < n)
+   {
+      for (int i = 0; i < n; i++)
+      {
+
+         if (at[i] <= time && rt[i] > 0)
+         {
+            if (rt[i] > tq)
+            {
+               time += tq;
+               rt[i] -= tq;
+            }
+            else
+            {
+               time += rt[i];
+               rt[i] = 0;
+               ct[i] = time;
+               completed++;
+            }
+         }
+      }
    }
 
-   cout<<"enter priority";
-   int priority[process];
-   for(int i=0; i<process;i++){
-      cin>>priority[i];
+   float avgWT = 0, avgTAT = 0;
+   int wt[4], tat[4];
+
+   cout << "P\tAT\tBT\tCT\tWT\tTAT\n";
+   for (int i = 0; i < n; i++)
+   {
+      tat[i] = ct[i] - at[i];
+      wt[i] = tat[i] - bt[i];
+
+      avgWT += wt[i];
+      avgTAT += tat[i];
+
+      cout << "P" << i + 1 << "\t"
+           << at[i] << "\t"
+           << bt[i] << "\t"
+           << ct[i] << "\t"
+           << wt[i] << "\t"
+           << tat[i] << endl;
    }
 
-   int wt[process];
+   cout << "\nAverage WT = " << avgWT / n;
+   cout << "\nAverage TAT = " << avgTAT / n;
 
-   //sorting burst time
-      for(int i=0; i<process;i++){
-    for(int j=0;j<process-i-1;j++){
-        if(burst_time[j]>burst_time[j+1]){
-            swap(burst_time[j],burst_time[j+1]);
-        }
-    }
-   }
-
-
-//   sorting  priority
-
-         for(int i=0; i<process;i++){
-    for(int j=0;j<process-i-1;j++){
-        if(priority[j]>priority[j+1]){
-            swap(priority[j],priority[j+1]);
-        }
-    }
-   }
-
-
-int ans =0;
-int tat[process];
-
-for(int i=0; i<process;i++){
-   ans = ans+burst_time[i];
-   wt[i]=ans-priority[i]-burst_time[i];
-   tat[i]=ans-priority[i];
-}
-
-
-   float sum =0;
-   float sum2 =0;
-   for(int i=0; i<process; i++){
-      sum+=wt[i];
-      sum2+=tat[i];
-   }
-
-  
-  
-   float average_waiting_time ;
-   float average_tat;
-   average_waiting_time = (sum/process);
-   average_tat=(sum2/process);
-   cout<<"Average waiting time is:"<<average_waiting_time<<endl;
-   cout<<"Average turn around time is:"<<average_tat;
-
-
-
+   return 0;
 }
